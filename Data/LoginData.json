@@ -1,0 +1,11 @@
+{
+    "validCredentials": {
+      "email": "imtiyaz@qa.com",
+      "password": "1234567"
+    },
+    "invalidCredentials": {
+      "email": "test@gmail.com",
+      "password": "123456790"
+    }
+  }
+  

@@ -1,15 +1,15 @@
 import { expect, Locator, Page } from "@playwright/test"
 export class LoginPage {
-    readonly page: Page;   // create variable page of type Page & use readonly so that we will not be able to modify it later
+    readonly page: Page;   
     readonly Email: Locator;
-    readonly Password: Locator;                 // Declared all properties here with types
+    readonly Password: Locator;                 
     readonly LoginButton: Locator;
     readonly errormsg: Locator;
     readonly logoutButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.Email = page.getByPlaceholder('Email')                     // inside constucture , initialised value of it
+        this.Email = page.getByPlaceholder('Email')                    
         this.Password = page.getByPlaceholder('Password')
         this.LoginButton = page.getByRole('button', { name: 'submit' })
         this.errormsg = page.locator('#error')

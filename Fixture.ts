@@ -1,11 +1,11 @@
-import { test as base, expect, Page } from '@playwright/test';
+import { test as base, expect } from '@playwright/test';
 import { LoginPage } from './Pages/LoginPage/LoginPage';
 
 type MynewFixture = {
     loginPage: LoginPage;  // Define loginPage as a type of LoginPage
 };
 
-// Extend the base test with a custom fixture
+
 export const test = base.extend<MynewFixture>({
     loginPage: async ({ page }, use) => {
         const loginPage = new LoginPage(page);

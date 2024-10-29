@@ -2,7 +2,11 @@
   "name": "playwright-contact-list-app",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:qa": "cross-env NODE_ENV=qa npx playwright test",
+    "test:production": "cross-env NODE_ENV=production npx playwright test",
+    "test:staging": "cross-env NODE_ENV=staging npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,5 +15,10 @@
     "@playwright/test": "^1.48.1",
     "@types/node": "^22.7.7",
     "allure-playwright": "^3.0.5"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5"
   }
 }

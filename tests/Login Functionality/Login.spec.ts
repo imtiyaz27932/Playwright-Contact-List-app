@@ -1,4 +1,4 @@
-import { test, expect } from '../../Fixture';
+import { test, expect } from '../../fixtures/Fixture';
 import credentials from '../../Data/LoginData.json';
 
 test("User logs in successfully", async ({ loginPage }) => {

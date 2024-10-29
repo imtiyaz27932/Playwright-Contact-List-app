@@ -1,4 +1,4 @@
-import { test } from "../../Fixture"
+import { test } from "../../fixtures/Fixture"
 import { Register } from "../../Pages/registerPage/registerPage"
 import { faker } from "@faker-js/faker"
 

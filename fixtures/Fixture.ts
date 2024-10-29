@@ -1,5 +1,5 @@
 import { test as base, expect } from '@playwright/test';
-import { LoginPage } from './Pages/LoginPage/LoginPage';
+import { LoginPage } from '../Pages/LoginPage/LoginPage';
 
 type MynewFixture = {
     loginPage: LoginPage;  // Define loginPage as a type of LoginPage

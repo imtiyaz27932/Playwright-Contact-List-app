@@ -7,6 +7,7 @@ import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 const env = process.env.NODE_ENV || 'qa';
+const env2= process.env.NODE_ENV || 'prod'
 dotenv.config({ path: path.resolve(__dirname, `env/.env.${env}`) });
 
 
@@ -15,6 +16,7 @@ dotenv.config({ path: path.resolve(__dirname, `env/.env.${env}`) });
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  globalSetup:"./globalSetup",
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -32,8 +34,12 @@ export default defineConfig({
     baseURL: process.env.QA_URL,
 
 
+    
+
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    storageState: "./LoginAuth.json",
   },
 
   /* Configure projects for major browsers */

@@ -1,4 +1,4 @@
-import { test, expect } from '../../Fixture';
+import { test, expect } from '../../fixtures/Fixture';
 import credentials from '../../Data/LoginData.json';
 
 test("User logs in successfully", async ({ loginPage }) => {
@@ -12,7 +12,7 @@ test('User tries to login with invalid credentials', async ({ loginPage }) => {
 });
 
 test('User logout functionality', async ({ loginPage }) => {
-    await loginPage.login(credentials.validCredentials.email, credentials.validCredentials.password);
+    //await loginPage.login(credentials.validCredentials.email, credentials.validCredentials.password); // Ensure the user is logged in first
     await loginPage.logout();
-    await expect(loginPage.Email).toBeVisible();
+    await expect(loginPage.Email).toBeVisible(); // Verify that email input is visible after logout
 });

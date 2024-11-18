@@ -14,6 +14,8 @@ export async function authenticateViaAPI(request: APIRequestContext, page: Page)
     const responseData = await response.json();
     const token = responseData.token;
 
+    
+
     await page.addInitScript((authToken) => {
         sessionStorage.setItem('token', authToken); 
     }, token);

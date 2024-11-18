@@ -24,6 +24,6 @@ test.describe('Smoke Tests', () => {
 
     // Test for authentication via API
     test("User is authenticated via API @via Api", async ({ apiLoginPage }) => {
-        await apiLoginPage.verifyUrl(); 
+         await apiLoginPage.verifyUrl(); 
     });
 });

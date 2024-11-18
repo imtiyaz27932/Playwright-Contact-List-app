@@ -1,3 +1,4 @@
+
 import { test as base, expect } from '@playwright/test';
 import { LoginPage } from '../Pages/LoginPage/LoginPage';
 import { authenticateViaAPI } from './apiAuth';
@@ -15,13 +16,15 @@ export const test = base.extend<MynewFixture>({
     },
 
     apiLoginPage: async ({ page, request }, use) => {
-        // Authenticate via API and store token in session storage
+        // Authenticate and set token/session
         await authenticateViaAPI(request, page);
 
+
+        //  LoginPage object for further interactions
         const loginPage = new LoginPage(page);
-        await loginPage.openApplication();
         await use(loginPage);
     },
 });
 
 export { expect };
+

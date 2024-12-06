@@ -6,7 +6,7 @@ test.describe('Smoke Tests', () => {
 
     // Test for successful login
     test("User logs in successfully @login", async ({ loginPage }) => {
-       // await loginPage.login(credentials.validCredentials.email, credentials.validCredentials.password);
+        await loginPage.login(credentials.validCredentials.email, credentials.validCredentials.password);
         await loginPage.verifyUrl(); 
     });
 

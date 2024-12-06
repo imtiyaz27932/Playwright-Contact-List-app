@@ -1,7 +1,7 @@
-import { faker, Faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import { Page } from "@playwright/test";
 import { lstat } from "fs";
-import { addNewContact } from "./contactPage/addContact";
+import { addNewContact } from "./addContact";
 
 
 export class ContactHelper {

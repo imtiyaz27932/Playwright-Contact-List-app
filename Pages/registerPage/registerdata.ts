@@ -1,6 +1,6 @@
 
 import { faker } from "@faker-js/faker";
-import { Register } from "./registerPage/registerPage"; 
+import { Register } from "./registerPage"; 
 import { Page } from "@playwright/test";
 
 export class RegisterHelper {

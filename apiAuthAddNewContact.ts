@@ -1,5 +1,8 @@
 import { faker } from "@faker-js/faker";
-import { APIRequestContext, Page } from "@playwright/test";
+import { APIRequestContext, expect, Page } from "@playwright/test";
+import { stat } from "fs";
+
+
 
 export async function addContactViaAPI(request: APIRequestContext, page: Page) {
     const cookies = await page.context().cookies('https://thinking-tester-contact-list.herokuapp.com');
@@ -28,6 +31,27 @@ export async function addContactViaAPI(request: APIRequestContext, page: Page) {
 
     const responseBody = await response.json();
     console.log(responseBody);
+
+    const status = response.status();
+    expect(status).toBe(201);
+    console.log(status)
+
+    expect(responseBody).toMatchObject({
+
+        firstName: expect.any(String),
+        lastName: expect.any(String),
+        email: expect.any(String),
+        phone: expect.any(String),
+        street1: expect.any(String),
+        street2: expect.any(String),
+        city: expect.any(String),
+        stateProvince: expect.any(String),
+        postalCode: expect.any(String),
+        country: expect.any(String),
+    });
+
+
+
 
     return responseBody;
 }

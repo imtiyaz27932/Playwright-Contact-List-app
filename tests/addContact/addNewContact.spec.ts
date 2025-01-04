@@ -11,6 +11,7 @@ test('Add a New Contact', async ({ page, loginPage }) => {
     await loginPage.login(credentials.validCredentials.email, credentials.validCredentials.password);
     const addcontact = new ContactHelper(page)
     await addcontact.addNewContact()
+    console.log(addcontact)
 
 
 })

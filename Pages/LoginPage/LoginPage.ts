@@ -15,7 +15,7 @@ export class LoginPage {
         this.Password = page.getByPlaceholder('Password');
         this.LoginButton = page.getByRole('button', { name: 'submit' });
         this.errormsg = page.locator('#error');
-        this.logoutButton = page.locator('#logout');
+        this.logoutButton = page.getByRole('button', { name: 'Logout' })
     }
 
     async openApplication(url: string = '/') {      

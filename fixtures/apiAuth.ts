@@ -19,6 +19,7 @@ export async function authenticateViaAPI(request: APIRequestContext, page: Page)
     await page.addInitScript((authToken) => {
         sessionStorage.setItem('token', authToken); 
     }, token);
+    
 
     // Navigate directly to the dashboard after setting the token
     await page.goto('https://thinking-tester-contact-list.herokuapp.com/contactList');

@@ -18,7 +18,9 @@ test.describe('Smoke Tests', () => {
 
     // Test for logout functionality
     test('User logout functionality @logout', async ({ loginPage,apiLoginPage }) => {
+        expect(loginPage.page.url()).toMatch(/.*contactList/);
         await loginPage.logout();
+        console.log('User logged out successfully');
         await expect(loginPage.Email).toBeVisible(); 
     });
 

@@ -40,6 +40,6 @@ export class LoginPage {
         await expect(this.logoutButton).toBeVisible();
         await this.logoutButton.click();
         await expect(this.page).toHaveURL("https://thinking-tester-contact-list.herokuapp.com/");
-        await expect(this.Email).toBeVisible();
+       
     }
 }

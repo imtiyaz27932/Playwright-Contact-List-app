@@ -19,7 +19,7 @@ async function loginAndAddCookies(context: any) {
     const responseData = await response.json();
     const token = responseData.token;
 
-    // Add token to cookies and session storage
+    // token to cookies and session storage
     await context.addCookies([
         {
             name: 'token',
